@@ -16,8 +16,6 @@ app.use(express.errorHandler({
 	showStack : true
 }));
 
-var port = 5000 || args[2];
-
 app.get('/app/:app', function(req, res){
 	var app = req.params.app;
 	if(config[app]) {
@@ -27,5 +25,6 @@ app.get('/app/:app', function(req, res){
 	}
 });
 
+var port = process.argv[2] || 5000;
 app.listen(port);
 console.log('Listening in port ' + port);
