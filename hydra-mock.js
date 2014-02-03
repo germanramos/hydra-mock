@@ -1,7 +1,8 @@
-var express = require('express');
-var app = express();
-var config = require('./config.json');
+var express = require('express'),
+	app = express(),
+	mock = require('./lib/hydra-mock');
 
+app.use(express.logger());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.cookieParser());
@@ -16,14 +17,10 @@ app.use(express.errorHandler({
 	showStack : true
 }));
 
-app.get('/app/:app', function(req, res){
-	var app = req.params.app;
-	if(config[app]) {
-		res.send(200, config[app]);
-	} else {
-		res.send(404);
-	}
-});
+app.get('/app/:app', mock.get);
+app.put('/app/:app', mock.validContent, mock.put);
+app.post('/app/:app', mock.validContent, mock.post);
+app.del('/app/:app', mock.del);
 
 var port = process.argv[2] || 5000;
 app.listen(port);
