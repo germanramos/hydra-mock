@@ -45,7 +45,7 @@ Return: 200 => ["server1", "server2",...]
 
 ## POST
 
-Append servers to the current server list for an app. Returns the list of servers.
+Append servers to the current server list for an app. Creates the app if doesn't exists. Returns the list of servers.
 
 ```
 POST /app/<app_name>
@@ -56,7 +56,7 @@ Return: 200 => ["server1", "server2",...]
 
 ## DELETE
 
-Delete servers from the list. If no server array is set in the body, deletes the app. Return the remainin servers or empty array.
+Delete servers from the list. If no server array is sent in the body, deletes the app. Return the remaining servers or empty array.
 
 ```
 DELETE /app/<app_name>
