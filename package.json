@@ -3,7 +3,7 @@
   	"description": "Hydra service mock",	
   	"version"	: "0.0.1",
   	"dependencies"	: {
-       	"express" 	: "latest"
+       	"express" 	: "~3.8.0"
 	},
 	
 	"engines" : {
