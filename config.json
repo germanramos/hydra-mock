@@ -1,4 +1,4 @@
 {
-	"hydra" : ["http://192.168.2.36:5000"],
-	"alfr3d" : ["http://alfr3d.innotechapp.com"]
+	"hydra" : ["http://localhost:5000"],
+	"alfr3d" : ["http://localhost:5000"]
 }

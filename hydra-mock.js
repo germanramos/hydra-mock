@@ -20,7 +20,7 @@ app.use(express.errorHandler({
 app.get('/app/:app', mock.get);
 app.put('/app/:app', mock.validContent, mock.put);
 app.post('/app/:app', mock.validContent, mock.post);
-app.del('/app/:app', mock.del);
+app.delete('/app/:app', mock.del);
 
 var port = process.argv[2] || 5000;
 app.listen(port);
